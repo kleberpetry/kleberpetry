@@ -1,5 +1,5 @@
 ### Olá! Eu sou o Kr@bz
-- 🔭 Professor de Tecnologia tecnologia
+- 🔭 Professor de Tecnologia
 - 🌱 Criador de conteúdo para o canal EducaByte
 <div align="center">
   <a href="https://github.com/kleberpetry">
