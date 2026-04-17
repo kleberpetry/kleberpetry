@@ -1,6 +1,6 @@
 ### Olá! Eu sou o Kr@bz
 - 🔭 Professor de Tecnologia
-- 🌱 Criador de conteúdo para o canal EducaByte
+- 🌱 Coordenador de graduação EAD Unicesumar Engenharia de Software.
 <div align="center">
   <a href="https://github.com/kleberpetry">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=kleberpetry&show_icons=true&theme=cobalt&include_all_commits=true&count_private=true"/>
