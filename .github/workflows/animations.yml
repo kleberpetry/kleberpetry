@@ -16,10 +16,11 @@ jobs:
       contents: write
 
     steps:
+      # 1. Checkout com a versão mais recente (Node 24 compatível)
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Gera a Snake (Salva direto na branch output)
+      # 2. Gera a Snake (Salva na pasta dist)
       - name: Generate Snake
         uses: Platane/snk@v3
         with:
@@ -29,20 +30,23 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/github-snake.gif
 
-      # Gera o Pac-Man (Salva na raiz temporária)
+      # 3. Gera o Pac-Man (Salva na raiz por padrão para evitar EACCES)
       - name: Generate Pac-Man
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: ${{ github.repository_owner }}
 
-      # Move os arquivos do Pac-Man para a pasta dist antes de publicar
-      - name: Prepare files
+      # 4. Organiza os arquivos manualmente para garantir permissões
+      - name: Organize files
         run: |
           mkdir -p dist
-          cp pacman-contribution-graph.svg dist/ || true
-          cp pacman-contribution-graph-dark.svg dist/ || true
+          # Copia os arquivos do Pacman para a pasta dist se eles existirem
+          [ -f pacman-contribution-graph.svg ] && cp pacman-contribution-graph.svg dist/
+          [ -f pacman-contribution-graph-dark.svg ] && cp pacman-contribution-graph-dark.svg dist/
+          echo "Arquivos organizados na pasta dist:"
+          ls -R dist
 
-      # Publica tudo na branch 'output'
+      # 5. Publica na branch 'output' usando a versão estável
       - name: Publish to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
