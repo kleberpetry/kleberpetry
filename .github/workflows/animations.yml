@@ -16,9 +16,9 @@ jobs:
       contents: write
 
     steps:
-      # 1. Checkout do repositório (necessário para organizar pastas)
+      # 1. Checkout do repositório
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # 2. Gera a Snake
       - name: Generate Snake
@@ -36,16 +36,16 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
 
-      # 4. Move o arquivo do Pac-Man para a pasta dist (onde a snake está)
+      # 4. Organiza os arquivos na pasta dist
       - name: Move Pac-Man to dist
         run: |
           mkdir -p dist
           mv pacman-contribution-graph.svg dist/ 2>/dev/null || true
           mv pacman-contribution-graph-dark.svg dist/ 2>/dev/null || true
 
-      # 5. Publica tudo de uma vez na branch output
+      # 5. Publica na branch 'output'
       - name: Publish to output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
