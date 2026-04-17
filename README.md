@@ -11,15 +11,7 @@
 
 <br clear="both">
 
-<img src="https://raw.githubusercontent.com/kleberpetry/kleberpetry/main/workflows/github-snake.svg" alt="Snake animation" />
 
-###
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kleberpetry/kleberpetry/main/workflows/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kleberpetry/kleberpetry/main/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/kleberpetry/kleberpetry/main/pacman-contribution-graph.svg">
-</picture>
 
 ###
 
